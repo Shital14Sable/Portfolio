@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Publications | Shital Sable</title>
+  <style>
+    :root { --bg-color: #ffffff; --text-color: #000000; --link-color: #007acc; }
+    [data-theme="dark"] { --bg-color: #121212; --text-color: #e0e0e0; --link-color: #4fc3f7; }
+    body { margin: 0; font-family: Arial, sans-serif; background-color: var(--bg-color); color: var(--text-color); transition: background-color 0.3s, color 0.3s; }
+    header { background: var(--bg-color); border-bottom: 1px solid #ccc; position: sticky; top: 0; z-index: 10; }
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; max-width: 1200px; margin: auto; }
+    nav a { margin: 0 0.75rem; text-decoration: none; color: var(--link-color); font-weight: bold; }
+    .theme-toggle { cursor: pointer; border: none; padding: 0.5rem 1rem; background-color: var(--link-color); color: white; border-radius: 4px; }
+    main { max-width: 900px; margin: auto; padding: 2rem; }
+    section { margin-bottom: 3rem; }
+    h2 { border-bottom: 2px solid var(--link-color); padding-bottom: 0.5rem; margin-bottom: 1rem; }
+    ul { padding-left: 1.2rem; }
+    a { color: var(--link-color); }
+  </style>
+</head>
+<body data-theme="light">
+  <header>
+    <nav>
+      <div>
+        <a href="index.html">Home/About</a>
+        <a href="skills.html">Skills</a>
+        <a href="education.html">Education</a>
+        <a href="experience.html">Experience</a>
+        <a href="projects.html">Projects</a>
+        <a href="publications.html">Publications</a>
+        <a href="resume.html">Resume</a>
+        <a href="hobbies.html">Hobbies</a>
+      </div>
+      <button class="theme-toggle" onclick="toggleTheme()">🌞 / 🌙</button>
+    </nav>
+  </header>
+  <main>
+    <section id="publications">
+      <h2>Publications</h2>
+      <ul>
+        <li>“Energy Efficient Path Planning for Mobile Robots” – ASME</li>
+        <li>“Adaptive Terrain Navigation” – AIAA</li>
+        <li>“Sensor Fusion in Urban Environments” – IJTIMES</li>
+      </ul>
+    </section>
+  </main>
+  <script>
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) {
+      document.body.setAttribute("data-theme", savedTheme);
+    }
+    function toggleTheme() {
+      const current = document.body.getAttribute("data-theme");
+      const next = current === "dark" ? "light" : "dark";
+      document.body.setAttribute("data-theme", next);
+      localStorage.setItem("theme", next);
+    }
+  </script>
+</body>
+</html>
